@@ -45,6 +45,7 @@ export default function Dashboard() {
         
           <p><b>Email:</b> {user.email}</p>
           <p><b>Name:</b>{user.name}</p>
+          <div>hello</div>
          
         </div>
       )}
