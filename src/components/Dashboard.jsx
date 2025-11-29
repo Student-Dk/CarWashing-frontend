@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import Sidebar from './Sidebar';
 
 export default function Dashboard() {
 
     const [user,setUser]=useState(null);
     const [message,setmessage]=useState("");
-    // const token=localStorage.getItem("token")
+    const token=localStorage.getItem("token")
 
     useEffect(()=>{
         const fetchDashboard= async ()=>{
@@ -35,8 +36,13 @@ export default function Dashboard() {
 
   return (
     <div>
+      <div style={{display:'flex'}}>
+      <Sidebar></Sidebar>
+      <h1>Welcome</h1>
+     
+         </div>
        
-
+{/* 
        <div style={{ width: "500px", margin: "50px auto" }}>
       <h2>Dashboard</h2>
       {message && <p>{message}</p>}
@@ -49,7 +55,14 @@ export default function Dashboard() {
          
         </div>
       )}
-    </div>
+    </div> */}
+
+
+
+
+
+
+
     </div>
   )
 }

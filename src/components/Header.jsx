@@ -5,7 +5,7 @@ export const  controlheader=createContext();
 
 export default function Header() {
 
-  const value={name:'dhiraj',rollno:'004', degree:'betech'}
+  const value=10;
 
 
 
