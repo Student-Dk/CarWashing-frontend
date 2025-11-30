@@ -1,13 +1,15 @@
 import React from 'react'
 import Sidebar from '../../components/Sidebar'
+import Aheader from './Aheader'
 
 export default function ManageEnquiries() {
   return (
    <div style={{display:'flex'}}>
-           <Sidebar></Sidebar>
-           <div>
-               <h1>Manges Enquires</h1>
-           </div>
+           <div><Sidebar></Sidebar></div>
+                 <div style={{ margin:'20px' , width:'80%' }}>
+                  <Aheader></Aheader>
+                
+                 </div>
          
        </div>
   )

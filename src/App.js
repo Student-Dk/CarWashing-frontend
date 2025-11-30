@@ -10,10 +10,17 @@ import AddCarWashBooking from './pages/AdminPages/AddCarWashBooking';
 import CarWashingBooking from './pages/AdminPages/CarWashingBooking';
 import ManageEnquiries from './pages/AdminPages/ManageEnquiries';
 import Pages from './pages/AdminPages/Pages';
+import AddWashingpoint from './pages/Adminfolder/AddWashingpoint';
+import AuthContex from './contex/AuthContex';
+
+
+
 function App() {
   return (
 
     <div>
+<AuthContex>
+  
 
       <Router>
 
@@ -29,11 +36,13 @@ function App() {
           <Route path='/carbookings' element={<CarWashingBooking></CarWashingBooking>}></Route >
           <Route path='/manages_Enquiries' element={<ManageEnquiries></ManageEnquiries>}></Route>
           <Route path='/pages' element={<Pages></Pages>}></Route>
+          <Route path='/AddWashingPoints' element={<AddWashingpoint></AddWashingpoint>}></Route>
         </Routes>
 
 
       </Router>
 
+</AuthContex>
 
     </div>
 

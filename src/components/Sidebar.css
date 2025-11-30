@@ -5,31 +5,23 @@
 
 .sidebar{
     height: 100vb;
-    width: 15%;
-    background-color: black;
+    width: 230px;
+    background-color: rgb(111, 27, 27);
     display:flex;
-    align-content: center;
-}
-
-.sidebar li{
-    color: white;
-    padding: 12px;
-    font-size: 20px;
-    list-style: none;
     
-   
 }
 
-.sidebar  a{
+
+
+ .sidebar a{
     display: inline-block;
-    text-decoration: none;
-   
-    
+    text-decoration: none; 
     color: white;
      width: 100%;
-     padding: 10px;
+     padding: 16px;
      font-size:medium;
-   
+     margin-top: 5px;
+    list-style: none;
      
      
 }
@@ -38,4 +30,33 @@
 .sidebar a:hover{
 background-color: rgb(102, 121, 129);
 }
+
+.profile{
+    position: relative;
+}
+
+.subprofile{
+    display: none;
+    position:absolute;
+    left: 70%;
+    top: 0%;
+    background-color: black;
+    list-style: none;
+    
+   
+}
+
+.subprofile a{
+  padding: 5px;
+  width: 100px;
+    
+}
+.profile:hover .subprofile{
+    display: block;
+}
+
+.subprofile a:hover{
+  background-color: rgb(29, 50, 50);
+}
+
 

@@ -1,9 +1,16 @@
-import React, { useContext } from 'react'
-import Header from '../components/Header'
-import { controlheader } from '../components/Header'
+import React, { useContext, useEffect } from 'react'
+
+
+
+
 
 export default function About() {
-  const data=useContext(controlheader)
+  
+
+  
+
+
+
   return (
     <div>
   
@@ -13,8 +20,8 @@ export default function About() {
      
 
       <img src="Aboutimage.png" alt="" />
-      <h1>{data}</h1>
       
+ 
     </div>
     </div>
   )
