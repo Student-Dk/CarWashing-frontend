@@ -17,14 +17,10 @@ import AuthContex from './contex/AuthContex';
 
 function App() {
   return (
-
     <div>
 <AuthContex>
-  
-
-      <Router>
-
-        <Routes>
+        <Router>
+       <Routes>
 
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/about' element={<About></About>}></Route>
