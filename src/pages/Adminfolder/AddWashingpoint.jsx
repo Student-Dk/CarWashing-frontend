@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, {  useState } from 'react'
+import axios from 'axios'
 import Sidebar from '../../components/Sidebar'
 import Aheader from '../AdminPages/Aheader'
 import Afooter from '../AdminPages/Afooter'
@@ -10,19 +11,42 @@ const [form,setform]=useState({
   Address:"",
   Contact:""
 })
-
+const token = localStorage.getItem("token")
 
 const handlechange=(e)=>{
 
-//const {name,value}=e.target
-setform({...form,[e.target.name]:e.target.value})
+const {name,value}=e.target
+setform({...form,[name]:value})
 
 
 }
 
-const handlesubmit=(e)=>{
-  console.log(form)
+const [message,setmessage]=useState("");
+
+const handlesubmit= async(e)=>{
+  
   e.preventDefault();
+try{
+  
+   
+  const res= await axios.post("http://localhost:1200/washingPoint",form,{
+    headers:{
+       Authorization: `Bearer ${token}`
+    }
+  })
+
+  if(res.status==201){
+  
+    alert('Added Sucessfully')
+  }
+
+
+
+}catch(error){
+ setmessage(error.response?.data?.message || "Process failed")
+}
+
+
 }
 
   return (
@@ -43,6 +67,8 @@ const handlesubmit=(e)=>{
 </form>
 
 </div>
+
+
 
       </div>
     </div>

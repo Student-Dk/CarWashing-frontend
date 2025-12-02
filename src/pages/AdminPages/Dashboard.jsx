@@ -14,6 +14,7 @@ export default function Dashboard() {
       const token = localStorage.getItem("token")
       if (!token) {
         setmessage("No token found. please login first")
+        
         return;
       }
 

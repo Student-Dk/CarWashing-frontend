@@ -15,7 +15,7 @@ export default function Home() {
 
 
       
-    
+    <h1>jjjjjjjjjjjjjjjjjjjjjjj</h1>
     <div style={{display:"flex", justifyContent:'center'}}>
     <img src="Bakgroundimgae.png" alt="h"  style={{width:'1400px'}}/>
    
