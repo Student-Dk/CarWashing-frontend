@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
 export default function Register() {
 
 
@@ -36,6 +37,7 @@ export default function Register() {
     }
   return (
     <div>
+      <Header></Header>
     <div style={styles.container}>
         <form action="" onSubmit={handleSubmit} style={styles.form}>
             <input type="text" name="name" onChange={handleChange} style={{padding:'20px'}} placeholder='Enter your Name' required/>

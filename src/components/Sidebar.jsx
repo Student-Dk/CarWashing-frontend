@@ -34,7 +34,6 @@ export default function Sidebar() {
   <li><Link to={'/'}>About page</Link></li></ul></Link></li>
 </ul>
 </nav>)}
-
   </div>
   )
 }

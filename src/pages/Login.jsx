@@ -33,7 +33,7 @@ naviagte("/dashboard")
     }
   return (
     <div>
-     
+     <Header></Header>
     <div style={styles.container}>
      
       <form action=""  onSubmit={handleSubmit} style={styles.form}>

@@ -1,20 +1,22 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Sidebar from '../../components/Sidebar';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Dashboard() {
 
   const [user, setUser] = useState(null);
   const [message, setmessage] = useState("");
   const token = localStorage.getItem("token")
+  const navigate=useNavigate();
 
   useEffect(() => {
     const fetchDashboard = async () => {
       const token = localStorage.getItem("token")
       if (!token) {
         setmessage("No token found. please login first")
-        
+        alert(setmessage)
+       
         return;
       }
 
@@ -41,7 +43,7 @@ export default function Dashboard() {
 
       <div style={{ display: 'flex', width:'100%' }}>
 
-
+          {!user && navigate("/login")}
        <div>
         {user && <Sidebar > </Sidebar>}
         </div>
@@ -56,9 +58,10 @@ export default function Dashboard() {
         
 
           {!user && <p>{message}</p>}
+        
           {user && (
             
-          <div style={{ margin:'20px' , width:'80%' }}>
+          <div style={{marginLeft: 'calc(190px + 5%)',width: '70%',marginTop:'5px' }}>
 
           <header style={{backgroundColor:'white', width:'100%', height:'10vh', display:'flex'}}>
             <div style={{width:'80%',backgroundColor:'green',margin:'5px',alignContent:'center',justifyItems:'center'}}>

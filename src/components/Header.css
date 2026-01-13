@@ -1,0 +1,128 @@
+/* Navbar बेसिक स्टाइल */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+/* Navbar सूची */
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar आइटम */
+.nav-list li {
+  margin: 0 1.5rem;
+  position: relative;
+}
+
+/* Navbar लिंक */
+.nav-list a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* हवर इफेक्ट */
+.nav-list a:hover {
+  color: #4a6cf7;
+}
+
+/* एक्टिव लिंक इफेक्ट */
+.nav-list a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #4a6cf7;
+  transition: width 0.3s ease;
+}
+
+.nav-list a:hover:after {
+  width: 100%;
+}
+
+/* रिस्पॉन्सिव डिजाइन - मोबाइल के लिए */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 0;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  
+  .nav-list li {
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+  
+  .nav-list a {
+    display: block;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-list a:hover {
+    background-color: #f0f5ff;
+  }
+}
+
+/* डार्क थीम विकल्प */
+.navbar.dark {
+  background-color: #1a1a2e;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.dark .nav-list a {
+  color: #f0f0f0;
+}
+
+.navbar.dark .nav-list a:hover {
+  color: #6c8eff;
+}
+
+.navbar.dark .nav-list a:hover:after {
+  background-color: #6c8eff;
+}
+
+/* स्क्रॉल पर बदलाव */
+.navbar.scrolled {
+  padding: 0.5rem 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.navbar.dark.scrolled {
+  background-color: rgba(26, 26, 46, 0.95);
+}
+
+/* एक्टिव पेज के लिए स्टाइल */
+.nav-list a.active {
+  color: #4a6cf7;
+  font-weight: 600;
+}
+
+.nav-list a.active:after {
+  width: 100%;
+}

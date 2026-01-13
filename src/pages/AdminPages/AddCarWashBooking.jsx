@@ -9,8 +9,10 @@ export default function AddCarWashBooking() {
       
         <div><Sidebar></Sidebar></div>
               <div style={{ margin:'20px' , width:'80%' }}>
-                <Aheader></Aheader>
-             
+                <Aheader>
+                  
+                  
+                  </Aheader>              
               </div>
       </div>
    

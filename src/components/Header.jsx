@@ -1,6 +1,6 @@
 import React, { createContext } from 'react'
 import {Link, Links}from 'react-router-dom'
-
+import './Header.css'
 export const  controlheader=createContext();
 
 export default function Header() {
@@ -13,16 +13,17 @@ export default function Header() {
    
     <div>
     
-    <nav style={{ color:'white', height:'80px', backgroundColor:'black',display: value?'block':'none'}}>
+    <nav className="navbar" style={{ display: value ? 'block' : 'none' }}>
+      <ul className="nav-list">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/Wplans">Washing Plans</Link></li>
+        <li><Link to="/Wpoints">Washing Points</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
         
-      <ul style={{display:'flex', justifyContent:"space-around"}}>
-        <li><Link to="/" style={{ textDecorationLine:'none',color:'white', listStyle:'none'}}><h2>Home</h2></Link></li>
-        <li><Link to="/about"  style={{ textDecorationLine:'none',color:'white', listStyle:'none'}}><h2>About</h2></Link></li>
-        <li><Link to={'/register'}style={{ textDecorationLine:'none',color:'white', listStyle:'none'}}><h2>Register</h2></Link></li>
-         <li><Link to={'/login'}style={{ textDecorationLine:'none',color:'white', listStyle:'none'}}><h2>Login</h2></Link></li>
-         
+        <li><Link to="/login">admin</Link></li>
+        <li><Link to="/contact">Get Appointment</Link></li>
       </ul>
-
     </nav>
 
     
