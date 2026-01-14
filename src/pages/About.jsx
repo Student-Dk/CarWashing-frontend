@@ -21,10 +21,8 @@ export default function About() {
      <div style={styles.container}>
         <img src="Aboutimage.png" alt="About" style={styles.image} />
         <p style={styles.text}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor in
-          magnam deleniti minima fugit eaque reprehenderit aspernatur est
-          laborum tenetur. Beatae qui rerum reprehenderit cumque deserunt nam
-          impedit distinctio iusto?
+           Our team uses eco-friendly cleaning products and state-of-the-art equipment to provide a thorough clean without harming the environment. We believe every vehicle deserves premium treatment.
+         we're passionate about keeping your vehicle looking its absolute best. With over 10 years of experience in automotive care, we've perfected the art of professional car washing.
         </p>
       </div>
     </div>

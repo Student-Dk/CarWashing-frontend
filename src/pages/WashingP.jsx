@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import axios from 'axios'
+import Footer from '../components/Footer'
 
 
 
@@ -112,6 +113,7 @@ export default function WashingP() {
       </div>
     )}
   </div>
+ 
 </div>
     )
 }

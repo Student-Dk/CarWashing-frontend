@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Header from '../components/Header'
 import axios from 'axios'
+import Footer from '../components/Footer'
 
 export default function Contact() {
 
@@ -171,6 +172,7 @@ try{
 
     </div>
   </div>
+ 
 </div>
   )
 }

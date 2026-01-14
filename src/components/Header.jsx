@@ -22,7 +22,7 @@ export default function Header() {
         <li><Link to="/contact">Contact</Link></li>
         
         <li><Link to="/login">admin</Link></li>
-        <li><Link to="/contact">Get Appointment</Link></li>
+       
       </ul>
     </nav>
 
