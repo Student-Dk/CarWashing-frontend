@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Sidebar from '../../components/Sidebar'
 import Aheader from './Aheader'
 import Afooter from './Afooter'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Authentication } from '../../contex/AuthContex'
 import axios from 'axios'
 
@@ -10,6 +10,7 @@ import axios from 'axios'
 export default function WashingPoints() {
 
   const {message,user}=useContext(Authentication)
+  const navigate=useNavigate()
 
 const token = localStorage.getItem("token")
 const [data, setData] = useState([]);
@@ -69,6 +70,7 @@ useEffect(()=>{
  
   return (
     <div style={{display:'flex', width:'100%'}}>
+      {!user && navigate('/login')}
         <div>{user&&<Sidebar></Sidebar>}</div>
 
 

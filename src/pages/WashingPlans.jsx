@@ -582,9 +582,9 @@ const handleSubmit = async (e)=>{
             required
           >
             <option value="">Select package</option>
-            <option value="Basic">Basic - ₹500</option>
-            <option value="Premium">Premium - ₹1000</option>
-            <option value="Complex">Complex - ₹2000</option>
+            <option value="Basic - ₹500">Basic - ₹500</option>
+            <option value="Premium - ₹1000">Premium - ₹1000</option>
+            <option value="Complex - ₹2000">Complex - ₹2000</option>
           </select>
         </div>
         
@@ -625,7 +625,7 @@ const handleSubmit = async (e)=>{
               e.target.style.backgroundColor = '#f8fafc';
               e.target.style.boxShadow = 'none';
             }}
-            placeholder="Any special instructions..."
+            placeholder="Enter message..."
           />
         </div>
         

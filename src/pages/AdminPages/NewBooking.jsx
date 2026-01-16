@@ -1,168 +1,123 @@
+import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { Authentication } from '../../contex/AuthContex'
 import Sidebar from '../../components/Sidebar'
 import Aheader from './Aheader'
-import axios from 'axios'
-import { Link, useNavigate } from 'react-router-dom'
+
+export default function NewBooking() {
+   const {message,user}=useContext(Authentication)
+   const navigate=useNavigate()
+ 
+ const [data, setData] = useState([]);
+const token = localStorage.getItem("token");
 
 
+useEffect(() => {
+  if (!token) return; // token nahi hai to call mat karo
 
-export default function ManageEnquiries() {
-
-const {message,user}=useContext(Authentication)
-const navigate=useNavigate();
-  const token = localStorage.getItem("token")
-  const [data, setData] = useState([]);
-
-  useEffect(()=>{
-       
-  
-    const fetchData = async () => {
-      try {
-        const res = await axios.get("http://localhost:1200/query",  {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-        setData(res.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-  
-    fetchData();
-    
-    }, []);
-
-
-
-
-const handleRead = async (id) => {
-  try {
-    const res = await axios.put(
-      `http://localhost:1200/query/${id}`,
-      { status: 'Read' },   // sirf status bhejo
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-
-    if (res.status === 200) {
-      // Frontend state update (MOST IMPORTANT)
-      setData(prevData =>
-        prevData.map(item =>
-          item._id === id
-            ? { ...item, status: 'Read' }
-            : item
-        )
+  const fetchData = async () => {
+    try {
+      const res = await axios.get(
+        "http://localhost:1200/booking/New",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
+
+      setData(res.data);
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-  } catch (error) {
-    console.log(error.response?.data || error.message);
-  }
-};
-
-
-  const handleDelete=async(id)=>{
-    const confirmDelete = window.confirm(
-    "Are you sure you want to delete this record?"
-  );
-
-  if (!confirmDelete) return;
- try {
-    const res = await axios.delete(
-      `http://localhost:1200/query/${id}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-
-    if (res.status === 200) {
-      alert("Deleted successfully");
-      setData(data.filter(item => item._id !== id));
-    }
-  } catch (error) {
-    console.log(error);
-  }
- }
-
+  fetchData();
+}, [token]);
   return (
-   <div style={{display:'flex'}}>
-
-    {!user && navigate('/login')}
-           <div><Sidebar></Sidebar></div>
-                {message && <p>{message}</p>}
-      {user && (
-
-       <div style={{marginLeft: 'calc(190px + 5%)',width: '70%',marginTop:'5px' }}>
-        <Aheader></Aheader>
-     
-  <nav style={{width:'100%', backgroundColor:'white',alignContent:'center',marginTop:'20px',  border:'2px solid gray',padding:'10px'}}>
-            <p style={{fontSize:'18px', marginLeft:'10px'}}><Link to={'/dashboard'} style={{cursor:'pointer', textDecoration:'none',color:'black'}}>Home</Link>/
-           <Link  style={{cursor:'pointer', textDecoration:'none',color:'black'}}>Manages Enquiries</Link>
-            </p>
-          </nav>
-<h3 style={{marginTop:'50px'}}>Manage Enquires</h3>
-
-<table style={styles.table}>
-  <thead>
-    <tr>
-      <th style={styles.th}>Name</th>
-      <th style={styles.th}>email</th>
-      <th style={styles.th}>subject</th>
-       <th style={styles.th}>Description</th>
-        <th style={styles.th}>posting date</th>
-       <th style={styles.th}>Status</th>
-       <th style={styles.th}>ACTION</th>
-
-
-    </tr>
-  </thead>
-
-  <tbody>
-    {data.map((item) => (
-      <tr key={item._id}>
-        <td style={styles.td}>{item.name}</td>
-        <td style={styles.td}>{item.email}</td>
-        <td style={styles.td}>{item.subject}</td>
-        <td style={styles.messageTd}>{item.message}</td>
-        <td style={styles.td}>{new Date(item.date).toLocaleString('en-GB', { hour12: false })}</td>
-         <td style={styles.td}>
-  <span
-  style={item.status === 'Read' ? styles.readText : styles.pendingText}
-  onClick={() => item.status !== 'Read' && handleRead(item._id)}
->
-  {item.status || 'Pending'}
-</span>
-</td>
-  
-  <td style={styles.td}><button onClick={() => handleDelete(item._id)}  style={{cursor:'pointer'}}>Delete</button></td>
-      </tr>
-    ))}
-  </tbody>
-</table>
-
-
-
-
-
-      
-       </div>
-
-       
-       )}
-
-     
-      
+    <div>
+      <div style={{display:'flex'}}>
+        {!user && navigate('/login')}
+               <div><Sidebar></Sidebar></div>
+                    {message && <p>{message}</p>}
+          {user && (
+    
+           <div style={{marginLeft: 'calc(190px + 5%)',width: '70%',marginTop:'5px' }}>
+            <Aheader></Aheader>
+              <nav style={{width:'100%', backgroundColor:'white',alignContent:'center',marginTop:'20px',  border:'2px solid gray',padding:'10px'}}>
+                        <p style={{fontSize:'18px', marginLeft:'10px'}}><Link to={'/dashboard'} style={{cursor:'pointer', textDecoration:'none',color:'black'}}>Home</Link>/
+                       <Link  style={{cursor:'pointer', textDecoration:'none',color:'black'}}>New Bookings</Link>
+                        </p>
+                      </nav>
          
-       </div>
+    
+    <h3 style={{marginTop:'50px'}}>New Bookings</h3>
+    
+    <table style={styles.table}>
+      <thead>
+        <tr>
+          <th style={styles.th}>Booking NO</th>
+          <th style={styles.th}>NAME</th>
+          <th style={styles.th}>PACAKGE TYPE</th>
+            <th style={styles.th}>WASHING POINT</th>
+           <th style={styles.th}>WASHING DATE/TIME</th>
+            <th style={styles.th}>POSTING DATE</th>
+             <th style={styles.th}>ACTION</th>
+    
+    
+        </tr>
+      </thead>
+    <tbody>
+    {data.length === 0 ? (
+      <tr>
+        <td
+          colSpan="7"
+          style={{ ...styles.td, textAlign: "center", fontWeight: "bold" }}
+        >
+          No entries found
+        </td>
+      </tr>
+    ) : (
+      data.map((item) => (
+        <tr key={item._id}>
+          <td style={styles.td}>{item.bookingId}</td>
+          <td style={styles.td}>{item.name}</td>
+          <td style={styles.td}>{item.packageType}</td>
+          <td style={styles.td}>{item.washingPoint}</td>
+          <td style={styles.td}>
+            {item.washDate}/{item.washTime}
+          </td>
+          <td style={styles.td}>
+            {new Date(item.date).toLocaleString("en-GB", {
+              hour12: false,
+            })}
+          </td>
+          <td style={styles.td}><Link to={`/viewNewBookings/${item._id}`}>View</Link></td>
+        </tr>
+      ))
+    )}
+  </tbody>
+    </table>
+    
+    
+    
+    
+    
+          
+           </div>
+    
+           
+           )}
+    
+         
+          
+             
+           </div>
+    </div>
   )
 }
+
 const styles = {
   table: {
     width: '100%',
@@ -323,3 +278,4 @@ const styles = {
     },
   },
 };
+

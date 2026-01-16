@@ -38,6 +38,103 @@ export default function Dashboard() {
     fetchDashboard()
   }, [])
 
+
+
+const [newCount, setNewCount] = useState(0);
+
+useEffect(() => {
+  if (!token) return;
+
+  axios.get("http://localhost:1200/booking/new/count", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+  .then(res => {
+    setNewCount(res.data.count);
+  })
+  .catch(err => console.log(err));
+}, [token]);
+
+
+
+const [completeCount, setCompleteCount] = useState(0);
+
+useEffect(() => {
+  if (!token) return;
+
+  axios.get("http://localhost:1200/booking/complete/count", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+  .then(res => {
+    setCompleteCount(res.data.count);
+  })
+  .catch(err => console.log(err));
+}, [token]);
+
+
+
+
+const [totalCount, setTotalCount] = useState(0);
+
+useEffect(() => {
+  if (!token) return;
+
+  axios.get("http://localhost:1200/booking/totalCount", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+  .then(res => {
+    setTotalCount(res.data.count);
+    
+  })
+  .catch(err => console.log(err));
+}, [token]);
+
+
+
+
+const [enquiryCount, setEnquiryCount] = useState(0);
+
+useEffect(() => {
+  if (!token) return;
+
+  axios.get("http://localhost:1200/query/enquiryCount", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+  .then(res => {
+    setEnquiryCount(res.data.count);
+  })
+  .catch(err => console.log(err));
+}, [token]);
+
+
+
+
+
+
+const [wpCount, setWpCount] = useState(0);
+
+useEffect(() => {
+  if (!token) return;
+
+  axios.get("http://localhost:1200/washingPoint/c", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+  .then(res => {
+    setWpCount(res.data.count);
+  })
+  .catch(err => console.log(err));
+}, [token]);
+
+
   return (
     <div style={{width:'100%'}} >
 
@@ -79,20 +176,25 @@ export default function Dashboard() {
           <div style={{display:'flex' ,marginTop:'100px', width:'100%'}}>
             <div style={{width:'25%', height:'150px',backgroundColor:'red', margin:'5px',alignContent:'center',justifyItems:'center', color:'white', fontSize:'20px'}}>
               <p>Total Bookings</p>
+              <p>{totalCount}</p>
             </div>
             <div style={{width:'25%', height:'150px',backgroundColor:'green', margin:'5px',alignContent:'center',justifyItems:'center', color:'white', fontSize:'20px'}}>
               <p>New Bookings</p>
+              <p>{newCount}</p>
             </div>
             <div style={{width:'25%', height:'150px',backgroundColor:'blue', margin:'5px',alignContent:'center',justifyItems:'center', color:'white', fontSize:'20px'}}>
               <p>Completed Bookings</p>
+              <p>{completeCount}</p>
             </div>
             <div style={{width:'25%', height:'150px',backgroundColor:'pink', margin:'5px',alignContent:'center',justifyItems:'center', color:'white', fontSize:'20px'}}>
               <p>Enquires</p>
+              <p>{enquiryCount}</p>
             </div>
           </div>
           <div style={{display:'flex' , width:'100%'}}>
             <div style={{width:'24%', height:'150px',backgroundColor:'brown', margin:'5px',alignContent:'center',justifyItems:'center', color:'white', fontSize:'20px'}}>
               <p><Link to={'/Washingpoints'} style={{cursor:'pointer', textDecoration:'none',color:'White'}}> Washing points</Link></p>
+              <p>{wpCount}</p>
             </div>
           </div>
 

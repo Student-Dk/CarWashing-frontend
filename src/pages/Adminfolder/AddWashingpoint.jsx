@@ -1,12 +1,17 @@
-import React, {  useState } from 'react'// 
+import React, {  useContext, useState } from 'react'// 
 import axios from 'axios'//api call ke liye iska use kiya hai
 import Sidebar from '../../components/Sidebar'//side bar ko import kiya
 import Aheader from '../AdminPages/Aheader'//admin ka header hai
 import Afooter from '../AdminPages/Afooter'//admin ka footer hai
 import './AWP.css'
+import { useNavigate } from 'react-router-dom'
+import { Authentication } from '../../contex/AuthContex'
 
 export default function AddWashingpoint() {
 
+  const {user}=useContext(Authentication)
+  const navigate=useNavigate()
+  
 const [form,setform]=useState({
   Car_Washing_Point_Name:"",
   Address:"",
@@ -52,6 +57,7 @@ try{
 
   return (
     <div style={{display:'flex'}}>
+      {!user && navigate('/login')}
       <Sidebar></Sidebar>
       <div style={{marginLeft: 'calc(190px + 5%)',width: '70%',marginTop:'5px'}}>
 <Aheader></Aheader>
@@ -59,6 +65,7 @@ try{
   <form onSubmit={handlesubmit} style={style.form}>
     <input 
       type="text" 
+      
       name="Car_Washing_Point_Name" 
       placeholder='Washing ka Point Name' 
       onChange={handlechange}

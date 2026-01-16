@@ -16,6 +16,9 @@ import EditWashingPoint from './pages/AdminPages/EditWashingPoint';
 import Contact from './pages/Contact';
 import WashingP from './pages/WashingP';
 import WashingPlans from './pages/WashingPlans';
+import NewBooking from './pages/AdminPages/NewBooking';
+import CompleteBooking from './pages/AdminPages/CompleteBooking';
+import ManageBookings from './pages/AdminPages/ManageBookings';
 
 
 
@@ -40,6 +43,9 @@ function App() {
           <Route path='/contact' element={<Contact></Contact>}></Route>
           <Route path='/Wpoints' element={<WashingP></WashingP>}></Route>
           <Route path='/Wplans' element={<WashingPlans></WashingPlans>}></Route>
+          <Route path='/Newbooking' element={<NewBooking></NewBooking>}></Route>
+          <Route path='/completebookings' element={<CompleteBooking></CompleteBooking>}></Route>
+          <Route path='/viewNewBookings/:id' element={<ManageBookings></ManageBookings>}></Route>
         </Routes>
 
 

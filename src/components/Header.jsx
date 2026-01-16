@@ -21,7 +21,7 @@ export default function Header() {
         <li><Link to="/Wpoints">Washing Points</Link></li>
         <li><Link to="/contact">Contact</Link></li>
         
-        <li><Link to="/login">admin</Link></li>
+        <li><Link to="/login">Admin</Link></li>
        
       </ul>
     </nav>

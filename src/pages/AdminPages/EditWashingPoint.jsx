@@ -68,6 +68,7 @@ const handleUpdate=async (e)=>{
 
   return (
     <div style={{display:'flex',width:'100%'}}>
+      {!user && navigate('/login')}
       <div><Sidebar></Sidebar></div>
      
       {message &&<p>{message}</p>}
