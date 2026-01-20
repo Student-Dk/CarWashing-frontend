@@ -1083,7 +1083,7 @@ export default function ManageBookings() {
                                             e.currentTarget.style.boxShadow = 'none';
                                         }}
                                     >
-                                        Update Booking
+                                        Car Washing Completed
                                     </button>
                                 </div>
                             </form>
