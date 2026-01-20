@@ -38,14 +38,7 @@ export default function Sidebar() {
             
             <li><Link to={'/manages_Enquiries'}>Manages Enquiries</Link></li>
             
-            <li className='profile'>
-              <Link to={'/pages'}>Pages</Link>
-              {/* Submenu should be outside Link but inside li */}
-              <ul className='subprofile'>
-                <li><Link to={'/contact'}>Contact page</Link></li>
-                <li><Link to={'/about'}>About page</Link></li>
-              </ul>
-            </li>
+           
           </ul>
         </nav>
       )}
