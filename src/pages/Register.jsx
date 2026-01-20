@@ -21,7 +21,7 @@ export default function Register() {
       e.preventDefault();
       try{
         
-        const res= await axios.post("http://localhost:1200/register",form)
+       const res= await axios.post("http://localhost:1200/register",form)
         if(res.status===201){
           alert("Registered Successfuly")
         naviagte("/about")
