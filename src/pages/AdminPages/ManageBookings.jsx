@@ -96,7 +96,7 @@ export default function ManageBookings() {
         );
 
         if (response.status === 200) {
-            alert('Booking updated successfully!');
+            alert('Car Washing Completed!');
             setShowForm(false);
 
             // reset form

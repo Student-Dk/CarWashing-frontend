@@ -1,73 +1,75 @@
-import React, { useContext, useEffect } from 'react'
-import Header from '../components/Header'
+import React from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-
-
-
+const sections = [
+  { img: "/ca1.jpg", title: "Eco-Friendly Products" },
+  { img: "/ca2.jpg", title: "Advanced Equipment" },
+  { img: "/ca3.jpg", title: "Expert Team" },
+  { img: "/HomeIm.jpg", title: "Premium Treatment" },
+  { img: "/c2.jpg", title: "10+ Years Experience" },
+  { img: "/c3.jpg", title: "Customer Satisfaction" },
+];
 
 export default function About() {
-
-  
-
-  
-
-
-
   return (
-   <div style={styles.page}>
-  
+    <>
+    
 
-  <Header></Header>
-     <div style={styles.container}>
-        <img src="Aboutimage.png" alt="About" style={styles.image} />
-        <p style={styles.text}>
-           Our team uses eco-friendly cleaning products and state-of-the-art equipment to provide a thorough clean without harming the environment. We believe every vehicle deserves premium treatment.
-         we're passionate about keeping your vehicle looking its absolute best. With over 10 years of experience in automotive care, we've perfected the art of professional car washing.
-        </p>
+      <div className="pt-20 bg-gradient-to-br from-gray-100 to-blue-100 min-h-screen">
+
+        {/* Page Title */}
+        <div className="text-center mb-12 px-6">
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">
+            About <span className="text-blue-600">WashPro</span>
+          </h1>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Premium car washing services using eco-friendly products and modern
+            equipment to keep your vehicle looking brand new.
+          </p>
+        </div>
+
+        {/* Grid Section */}
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {sections.map((section, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
+              >
+                <img
+                  src={section.img}
+                  alt={section.title}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                    {section.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Our team ensures premium car care using state-of-the-art
+                    techniques and eco-friendly products. Your vehicle is in
+                    expert hands.
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center mt-16 mb-24 px-6">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            Your Car Deserves the Best
+          </h2>
+          <p className="text-gray-600 mb-46">
+           .
+          </p>
+         
+        </div>
       </div>
-    </div>
-  )
+
+  
+    </>
+  );
 }
-const styles = {
-  page: {
-    minHeight: '100vh',
-    display: 'flex',
-    flexDirection: 'column',
-    background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif",
-  },
-  
-  container: {
-    maxWidth: '1200px',
-    margin: '2rem auto',
-    padding: '0 1.5rem',
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gap: '3rem',
-    alignItems: 'center',
-    flex: '1',
-  },
-  
-  image: {
-    width: '100%',
-    height: 'auto',
-    borderRadius: '20px',
-    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1), 0 15px 12px rgba(0, 0, 0, 0.05)',
-    transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-    filter: 'brightness(0.95)',
-    objectFit: 'cover',
-    aspectRatio: '4/3',
-  },
-  
-  text: {
-    fontSize: '1.1rem',
-    lineHeight: '1.8',
-    color: '#333',
-    background: 'white',
-    padding: '2.5rem',
-    borderRadius: '20px',
-    boxShadow: '0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07)',
-    position: 'relative',
-    overflow: 'hidden',
-  },
-};

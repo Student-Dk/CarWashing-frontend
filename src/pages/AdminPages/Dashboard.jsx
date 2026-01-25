@@ -15,7 +15,7 @@ export default function Dashboard() {
       const token = localStorage.getItem("token")
       if (!token) {
         setmessage("No token found. please login first")
-        alert(setmessage)
+        
        
         return;
       }
@@ -137,10 +137,11 @@ useEffect(() => {
 
   return (
     <div style={{width:'100%'}} >
+       {!user && navigate("/login")}
 
       <div style={{ display: 'flex', width:'100%' }}>
 
-          {!user && navigate("/login")}
+         
        <div>
         {user && <Sidebar > </Sidebar>}
         </div>

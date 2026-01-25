@@ -32,35 +32,54 @@ naviagte("/dashboard")
 
     }
   return (
-    <div>
-     <Header></Header>
-    <div style={styles.container}>
-     
-      <form action=""  onSubmit={handleSubmit} style={styles.form}>
-        <input type="text" name="userId" placeholder='Enter userId' onChange={handleChange} style={{padding:'20px'} }/>
-        <br /><br />
-        <input type="password" name="password" placeholder='Enter password' onChange={handleChange} style={{padding:'20px'}} />
-        <br /><br />
-        <button type='submit' style={{padding:'20px'}}>Sumbit</button>
-      </form>
-      {message && <p>{message}</p>}
-    </div>
-    </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-blue-300">
+ 
+
+  <div className="flex items-center justify-center min-h-[calc(100vh-80px)] px-4">
+    <form
+      onSubmit={handleSubmit}
+      className="w-full max-w-md bg-white p-8 rounded-xl shadow-lg transition-transform duration-300 hover:scale-[1.01]"
+    >
+      {/* Title */}
+      <h2 className="text-2xl font-bold text-center text-blue-600 mb-6">
+        Admin Login
+      </h2>
+
+      {/* User ID */}
+      <input
+        type="text"
+        name="userId"
+        placeholder="Enter User ID"
+        onChange={handleChange}
+        className="w-full px-4 py-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+
+      {/* Password */}
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter Password"
+        onChange={handleChange}
+        className="w-full px-4 py-3 mb-6 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+
+      {/* Button */}
+      <button
+        type="submit"
+        className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300"
+      >
+        Submit
+      </button>
+
+      {/* Message */}
+      {message && (
+        <p className="mt-4 text-center text-red-500 font-medium">
+          {message}
+        </p>
+      )}
+    </form>
+  </div>
+</div>
   )
 }
 
-const styles={
-    container:{
-         maxWidth: '400px',
-    margin: '50px auto',
-    padding: '20px',
-    border: '1px solid #ccc',
-    borderRadius: '10px',
-    textAlign: 'center',
-    },
-     form: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '10px',
-  }
-}
