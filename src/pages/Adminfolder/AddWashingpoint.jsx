@@ -27,7 +27,7 @@ setform({...form,[name]:value})
 
 }
 
-const [message,setmessage]=useState("");
+
 
 const handlesubmit= async(e)=>{
   
@@ -49,7 +49,7 @@ try{
 
 
 }catch(error){
- setmessage(error.response?.data?.message || "Process failed")
+ console.log(error)
 }
 
 

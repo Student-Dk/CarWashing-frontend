@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Sidebar from '../../components/Sidebar'
-import Dashboard from './Dashboard'
+
 import Aheader from './Aheader'
 import axios from 'axios';
 import { Authentication } from '../../contex/AuthContex';

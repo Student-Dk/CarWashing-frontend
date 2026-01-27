@@ -19,7 +19,7 @@ const heroImages = [
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
-  const location = useLocation();
+  
 
   // Auto slider effect
   useEffect(() => {

@@ -9,7 +9,7 @@ export default function Login() {
     })
     const [message, setmessage]=useState("")
     const naviagte=useNavigate();
-    const [token,setToken]=useState("")
+    
 
     const handleChange=(e)=>{
         const {name,value}=e.target
@@ -21,7 +21,7 @@ e.preventDefault();
 try{
 const res= await axios.post("https://carwashing-backend-repo.onrender.com/login",form)
 setmessage(res.data.message)
-setToken(res.data.token)
+
 localStorage.setItem("token",res.data.token)
 naviagte("/dashboard")
 }catch(error){

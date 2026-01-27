@@ -15,9 +15,9 @@ export default function Footer() {
               Professional car washing services with premium quality products and experienced staff.
             </p>
             <div style={styles.socialIcons}>
-              <a href="#" style={styles.socialIcon}><FaFacebook /></a>
-              <a href="#" style={styles.socialIcon}><FaTwitter /></a>
-              <a href="#" style={styles.socialIcon}><FaInstagram /></a>
+              <a href="/" style={styles.socialIcon}><FaFacebook /></a>
+              <a href="/" style={styles.socialIcon}><FaTwitter /></a>
+              <a href="/" style={styles.socialIcon}><FaInstagram /></a>
             </div>
           </div>
 
@@ -25,11 +25,11 @@ export default function Footer() {
           <div style={styles.footerSection}>
             <h3 style={styles.footerTitle}>Quick Links</h3>
             <ul style={styles.footerList}>
-              <li><a href="#plans" style={styles.footerLink}>Washing Plans</a></li>
-              <li><a href="#contact" style={styles.footerLink}>Contact Us</a></li>
-              <li><a href="#" style={styles.footerLink}>About Us</a></li>
-              <li><a href="#" style={styles.footerLink}>Services</a></li>
-              <li><a href="#" style={styles.footerLink}>Privacy Policy</a></li>
+              <li><a href="/" style={styles.footerLink}>Washing Plans</a></li>
+              <li><a href="/" style={styles.footerLink}>Contact Us</a></li>
+              <li><a href="/" style={styles.footerLink}>About Us</a></li>
+              <li><a href="/" style={styles.footerLink}>Services</a></li>
+              <li><a href="/" style={styles.footerLink}>Privacy Policy</a></li>
             </ul>
           </div>
 

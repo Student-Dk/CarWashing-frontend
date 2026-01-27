@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 export default function ManageBookings() {
-    const { message, user } = useContext(Authentication)
+    const {  user } = useContext(Authentication)
     
     const [showForm, setShowForm] = useState(false);
     const [formData, setFormData] = useState({

@@ -8,7 +8,7 @@ export default function Contact() {
     message: '',
   });
 
-  const [message, setMessage] = useState('');
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,7 +27,7 @@ export default function Contact() {
         alert('Ticket Generated');
       }
     } catch (error) {
-      setMessage(error.response?.data?.message || "Process failed");
+      console.log(error)
     }
   };
 
