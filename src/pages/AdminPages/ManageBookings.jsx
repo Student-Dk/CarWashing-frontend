@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState,useCallback } from 'react'
 import { Authentication } from '../../contex/AuthContex'
 import Sidebar from '../../components/Sidebar'
 import Aheader from './Aheader'
@@ -23,7 +23,31 @@ export default function ManageBookings() {
     const [loading, setLoading] = useState(true);
     const [adminDetails, setAdminDetails] = useState(null);
 
-    useEffect(() => {
+
+   const fetchAdminDetails = useCallback(async () => {
+    try {
+        const response = await axios.get(
+            `https://carwashing-backend-repo.onrender.com/booking/${id}/admin-details`,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            }
+        );
+        setAdminDetails(response.data);
+    } catch (error) {
+        console.log("Admin details fetch error:", error);
+
+        setAdminDetails({
+            transactionType: data.transactionType || "UPI Payment",
+            transactionNumber: data.transactionNumber || "TXN123456789",
+            adminRemarks: data.adminRemarks || "Payment received successfully",
+            updatedBy: user?.name || "Admin",
+            updatedAt: new Date().toISOString()
+        });
+    }
+}, [id, token, data, user]);
+     useEffect(() => {
         const fetchData = async () => {
             try {
                 const res = await axios.get(`https://carwashing-backend-repo.onrender.com/booking/${id}`, {
@@ -44,29 +68,9 @@ export default function ManageBookings() {
             }
         };
         fetchData();
-    }, [id, token]);
+    }, [id, token,fetchAdminDetails]);
 
-    const fetchAdminDetails = async () => {
-        try {
-            // Yeh  API endpoint hoga jahan se admin details milti hain
-            const response = await axios.get(`https://carwashing-backend-repo.onrender.com/booking/${id}/admin-details`, {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            });
-            setAdminDetails(response.data);
-        } catch (error) {
-            console.log("Admin details fetch error:", error);
-            
-            setAdminDetails({
-                transactionType: data.transactionType || "UPI Payment",
-                transactionNumber: data.transactionNumber || "TXN123456789",
-                adminRemarks: data.adminRemarks || "Payment received successfully",
-                updatedBy: user?.name || "Admin",
-                updatedAt: new Date().toISOString()
-            });
-        }
-    };
+   
 
     const handleFormChange = (e) => {
         const { name, value } = e.target;
@@ -140,18 +144,7 @@ export default function ManageBookings() {
         });
     };
 
-    const formatDateTime = (dateString) => {
-        if (!dateString) return '';
-        const date = new Date(dateString);
-        return date.toLocaleDateString('en-IN', {
-            day: 'numeric',
-            month: 'short',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: true
-        });
-    };
+  
 
     const formatTime = (timeString) => {
         if (!timeString) return '';
@@ -192,6 +185,8 @@ export default function ManageBookings() {
     }
 
     const isCompleted = data.status === 'completed';
+
+   
 
     return (
         <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#f8fafc' }}>
