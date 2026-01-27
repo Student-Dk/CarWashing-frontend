@@ -19,7 +19,7 @@ export default function ManageBookings() {
     const token = localStorage.getItem("token")
     const { id } = useParams();
     const navigate = useNavigate();
-    const [data, setData] = useState([]);
+    const [data, setData] = useState({});
     const [loading, setLoading] = useState(true);
     const [adminDetails, setAdminDetails] = useState(null);
 
@@ -68,7 +68,7 @@ export default function ManageBookings() {
             }
         };
         fetchData();
-    }, [id, token,fetchAdminDetails]);
+    }, [id, token, fetchAdminDetails]);
 
    
 
@@ -122,7 +122,7 @@ export default function ManageBookings() {
             setData(res.data);
 
             // booking completed  admin details fetch
-            if (res.data.status === 'Completed') {
+            if (res.data.status === 'completed') {
                 fetchAdminDetails();
             }
         }
