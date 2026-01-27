@@ -26,7 +26,7 @@ export default function ManageBookings() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`http://localhost:1200/booking/${id}`, {
+                const res = await axios.get(`https://carwashing-backend-repo.onrender.com/booking/${id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -49,7 +49,7 @@ export default function ManageBookings() {
     const fetchAdminDetails = async () => {
         try {
             // Yeh  API endpoint hoga jahan se admin details milti hain
-            const response = await axios.get(`http://localhost:1200/booking/${id}/admin-details`, {
+            const response = await axios.get(`https://carwashing-backend-repo.onrender.com/booking/${id}/admin-details`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -82,7 +82,7 @@ export default function ManageBookings() {
     try {
         // UPDATE booking
         const response = await axios.post(
-            `http://localhost:1200/booking/${id}`,
+            `https://carwashing-backend-repo.onrender.com/booking/${id}`,
             {
                 transactionType: formData.transactionType,
                 transactionNumber: formData.transactionNumber,
@@ -108,7 +108,7 @@ export default function ManageBookings() {
 
             // FETCH updated booking (GET)
             const res = await axios.get(
-                `http://localhost:1200/booking/${id}`,
+                `https://carwashing-backend-repo.onrender.com/booking/${id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`

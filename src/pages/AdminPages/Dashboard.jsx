@@ -21,7 +21,7 @@ export default function Dashboard() {
       }
 
       try {
-        const res = await axios.get("http://localhost:1200/dashboard", {
+        const res = await axios.get("https://carwashing-backend-repo.onrender.com/dashboard", {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -45,7 +45,7 @@ const [newCount, setNewCount] = useState(0);
 useEffect(() => {
   if (!token) return;
 
-  axios.get("http://localhost:1200/booking/new/count", {
+  axios.get("https://carwashing-backend-repo.onrender.com/booking/new/count", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -63,7 +63,7 @@ const [completeCount, setCompleteCount] = useState(0);
 useEffect(() => {
   if (!token) return;
 
-  axios.get("http://localhost:1200/booking/complete/count", {
+  axios.get("https://carwashing-backend-repo.onrender.com/booking/complete/count", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -82,7 +82,7 @@ const [totalCount, setTotalCount] = useState(0);
 useEffect(() => {
   if (!token) return;
 
-  axios.get("http://localhost:1200/booking/totalCount", {
+  axios.get("https://carwashing-backend-repo.onrender.com/booking/totalCount", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -102,7 +102,7 @@ const [enquiryCount, setEnquiryCount] = useState(0);
 useEffect(() => {
   if (!token) return;
 
-  axios.get("http://localhost:1200/query/enquiryCount", {
+  axios.get("https://carwashing-backend-repo.onrender.com/query/enquiryCount", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -123,7 +123,7 @@ const [wpCount, setWpCount] = useState(0);
 useEffect(() => {
   if (!token) return;
 
-  axios.get("http://localhost:1200/washingPoint/c", {
+  axios.get("https://carwashing-backend-repo.onrender.com/washingPoint/c", {
     headers: {
       Authorization: `Bearer ${token}`,
     },

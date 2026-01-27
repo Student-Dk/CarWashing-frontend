@@ -58,11 +58,11 @@ export default function About() {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16 mb-24 px-6">
+        <div className="text-center mt-16 mb-0 px-6">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Your Car Deserves the Best
           </h2>
-          <p className="text-gray-600 mb-46">
+          <p className="text-gray-600 mb-0">
            .
           </p>
          

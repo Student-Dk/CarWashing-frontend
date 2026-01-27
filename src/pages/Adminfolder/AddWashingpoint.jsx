@@ -35,7 +35,7 @@ const handlesubmit= async(e)=>{
 try{
   
    
-  const res= await axios.post("http://localhost:1200/washingPoint",form,{
+  const res= await axios.post("https://carwashing-backend-repo.onrender.com/washingPoint",form,{
     headers:{
        Authorization: `Bearer ${token}`
     }

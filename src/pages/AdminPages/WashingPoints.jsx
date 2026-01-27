@@ -23,7 +23,7 @@ const [data, setData] = useState([]);
   if (!confirmDelete) return;
  try {
     const res = await axios.delete(
-      `http://localhost:1200/washingPoint/${id}`,
+      `https://carwashing-backend-repo.onrender.com/washingPoint/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -50,7 +50,7 @@ useEffect(()=>{
   //     .catch((err) => console.log(err));
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://localhost:1200/washingPoint");
+      const res = await axios.get("https://carwashing-backend-repo.onrender.com/washingPoint");
       setData(res.data);
     } catch (error) {
       console.log(error);

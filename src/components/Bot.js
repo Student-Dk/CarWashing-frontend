@@ -17,7 +17,7 @@ function Bot() {
         setLoading(true);
         if(!input.trim()) return;
         try {
-           const res=await axios.post("http://localhost:1200/bot/v1/message",{
+           const res=await axios.post("https://carwashing-backend-repo.onrender.com/bot/v1/message",{
                 text: input
             })
             if(res.status === 200) {
@@ -53,7 +53,7 @@ function Bot() {
             // Centered welcome message
             <div className="text-center text-gray-400 text-lg">
               👋 Hi, I'm{" "}
-              <span className="text-green-500 font-semibold">BotSpoof</span>.
+              <span className="text-green-500 font-semibold">chatBot</span>.
             </div>
           ) : (
             <>

@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom'; // Added for navigation
-import Header from '../components/Header';
-import About from './About';
-import WashingP from './WashingP';
+
 import WashingPlans from './WashingPlans';
 import Contact from './Contact';
-import Footer from '../components/Footer';
+
 import { FaCar, FaShieldAlt, FaClock, FaCheckCircle } from 'react-icons/fa';
 
 const heroImages = [
   '/HI.jpg',
   '/ca3.jpg',
-  '/c2.jpg',
   '/c3.jpg',
   '/ca1.jpg',
   '/ca2.jpg',
@@ -196,6 +193,7 @@ export default function Home() {
       </section>
 
       {/* Other Sections */}
+     
       <div >
        <WashingPlans></WashingPlans>
       </div>

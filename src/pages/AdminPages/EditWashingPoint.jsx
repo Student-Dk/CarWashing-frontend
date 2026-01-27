@@ -27,7 +27,7 @@ export default function EditWashingPoint() {
   useEffect(()=>{
   const fetchData = async () => {
     try {
-      const res = await axios.get( `http://localhost:1200/washingPoint/${id}`);
+      const res = await axios.get( `https://carwashing-backend-repo.onrender.com/washingPoint/${id}`);
       setFormData(res.data);
     } catch (error) {
       console.log(error);

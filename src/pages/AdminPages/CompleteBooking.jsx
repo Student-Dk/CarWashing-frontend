@@ -20,7 +20,7 @@ useEffect(() => {
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:1200/booking/complete",
+        "https://carwashing-backend-repo.onrender.com/booking/complete",
         {
           headers: {
             Authorization: `Bearer ${token}`,

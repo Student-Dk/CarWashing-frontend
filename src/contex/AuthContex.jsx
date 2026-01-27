@@ -22,7 +22,7 @@ useEffect(()=>{
 
     try{
 
-const res= await axios.get("http://localhost:1200/dashboard",{
+const res= await axios.get("https://carwashing-backend-repo.onrender.com/dashboard",{
   headers:{
      Authorization: `Bearer ${token}`
   }

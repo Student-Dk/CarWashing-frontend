@@ -19,7 +19,7 @@ const navigate=useNavigate();
   
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:1200/query",  {
+        const res = await axios.get("https://carwashing-backend-repo.onrender.com/query",  {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -40,7 +40,7 @@ const navigate=useNavigate();
 const handleRead = async (id) => {
   try {
     const res = await axios.put(
-      `http://localhost:1200/query/${id}`,
+      `https://carwashing-backend-repo.onrender.com/query/${id}`,
       { status: 'Read' },   // sirf status bhejo
       {
         headers: {
@@ -74,7 +74,7 @@ const handleRead = async (id) => {
   if (!confirmDelete) return;
  try {
     const res = await axios.delete(
-      `http://localhost:1200/query/${id}`,
+      `https://carwashing-backend-repo.onrender.com/query/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
