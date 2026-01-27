@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom'; // Added for navigation
+import {  useNavigate } from 'react-router-dom'; // Added for navigation
 
 import WashingPlans from './WashingPlans';
 import Contact from './Contact';

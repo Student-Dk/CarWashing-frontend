@@ -15,7 +15,7 @@ export default function WashingPlans() {
         packageType: ""
     });
     const [washingPoints, setWashingPoints] = useState([]);
-    const [response, setResponse] = useState("");
+   
 
     useEffect(() => {
         const fetchWashingPoints = async () => {
@@ -39,7 +39,7 @@ export default function WashingPlans() {
         try {
             const res = await axios.post("https://carwashing-backend-repo.onrender.com/booking", formData);
             const msg = `Booking Successful! Your Booking ID: ${res.data.bookingId}`;
-            setResponse(msg);
+         
             alert(msg);
             setFormData({
                 name: "",
@@ -52,7 +52,7 @@ export default function WashingPlans() {
             });
             setShowForm(false)
         } catch (error) {
-            setResponse("Error:" + error.response?.data?.message || error.message);
+            console.log(error)
         }
     }
 
