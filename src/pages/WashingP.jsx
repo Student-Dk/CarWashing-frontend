@@ -6,7 +6,7 @@ export default function WashingP() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:1200/washingPoint");
+        const res = await fetch("https://carwashing-backend-repo.onrender.com/washingPoint");
         const result = await res.json();
         setData(result);
       } catch (error) {

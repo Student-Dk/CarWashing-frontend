@@ -9,7 +9,7 @@ import AdminLayout from "./layouts/AdminLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Register from "./pages/Register";
+
 import Login from "./pages/Login";
 import WashingP from "./pages/WashingP";
 import WashingPlans from "./pages/WashingPlans";

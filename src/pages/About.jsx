@@ -1,6 +1,5 @@
 import React from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+
 
 const sections = [
   { img: "/ca1.jpg", title: "Eco-Friendly Products" },

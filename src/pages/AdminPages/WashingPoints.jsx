@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Sidebar from '../../components/Sidebar'
 import Aheader from './Aheader'
-import Afooter from './Afooter'
+
 import { Link, useNavigate } from 'react-router-dom'
 import { Authentication } from '../../contex/AuthContex'
 import axios from 'axios'

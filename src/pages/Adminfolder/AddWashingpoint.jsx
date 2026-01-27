@@ -2,7 +2,7 @@ import React, {  useContext, useState } from 'react'//
 import axios from 'axios'//api call ke liye iska use kiya hai
 import Sidebar from '../../components/Sidebar'//side bar ko import kiya
 import Aheader from '../AdminPages/Aheader'//admin ka header hai
-import Afooter from '../AdminPages/Afooter'//admin ka footer hai
+
 import './AWP.css'
 import { useNavigate } from 'react-router-dom'
 import { Authentication } from '../../contex/AuthContex'
@@ -41,7 +41,7 @@ try{
     }
   })
 
-  if(res.status==201){
+  if(res.status===201){
   
     alert('Added Sucessfully')
   }
@@ -89,7 +89,7 @@ try{
   </form>
 </div>
 
-
+ 
 
       </div>
     </div>

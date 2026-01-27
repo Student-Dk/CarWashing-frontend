@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../components/Header'
+
 import axios from 'axios';
-import Footer from '../components/Footer';
+
 
 export default function WashingPlans() {
     const [showForm, setShowForm] = useState(false);
@@ -20,7 +20,7 @@ export default function WashingPlans() {
     useEffect(() => {
         const fetchWashingPoints = async () => {
             try {
-                const res = await axios.get("http://localhost:1200/washingPoint");
+                const res = await axios.get("https://carwashing-backend-repo.onrender.com/washingPoint");
                 setWashingPoints(res.data);
             } catch (error) {
                 console.log("Error during fetching washing points data: ", error)
@@ -37,7 +37,7 @@ export default function WashingPlans() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:1200/booking", formData);
+            const res = await axios.post("https://carwashing-backend-repo.onrender.com/booking", formData);
             const msg = `Booking Successful! Your Booking ID: ${res.data.bookingId}`;
             setResponse(msg);
             alert(msg);

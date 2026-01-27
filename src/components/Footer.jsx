@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaCheck, FaTimes, FaCar, FaShieldAlt, FaClock, FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import {  FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 
 export default function Footer() {
